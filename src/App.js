@@ -2,10 +2,7 @@ import React from 'react';
 import Homepage from './pages/homepage/homepage.component';
 import './App.css';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-
-const Hats = () => {
-  return <div>HATS</div>
-}
+import ShopPage from './pages/shop/shop.component';
 
 function App() {
   return (
@@ -13,7 +10,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/' component={Homepage} />
-          <Route exact path='/hats' component={Hats} />
+          <Route exact path='/shop' component={ShopPage} />
         </Switch>
       </div>
     </Router>
