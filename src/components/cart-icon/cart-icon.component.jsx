@@ -1,10 +1,10 @@
 import React from "react";
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import { connect } from "react-redux";
-import CartAction from "../../redux/cart/cart.actions";
+import { cartAction } from "../../redux/cart/cart.actions";
 import './cart-icon.styles.scss';
 
-const CartIcon = ({CartAction}) => {
+const CartIcon = ({ CartAction }) => {
     return (
         <div className="cart-icon" onClick={CartAction}>
             <ShoppingIcon className="shopping-icon" />
@@ -12,8 +12,8 @@ const CartIcon = ({CartAction}) => {
         </div>
     )
 }
-const mapDispatchToProps = dispatch =>({
-    CartAction: () => dispatch(CartAction())
+const mapDispatchToProps = dispatch => ({
+    CartAction: () => dispatch(cartAction())
 })
 
 export default connect(null, mapDispatchToProps)(CartIcon);

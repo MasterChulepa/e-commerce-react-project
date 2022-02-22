@@ -9,7 +9,7 @@ export default class ShopPage extends Component{
     render(){
         const {collections} = this.state; 
         return (
-            <div className="shop-psge">
+            <div className="shop-page">
                 {
                 collections.map((collection, i) => <CollectionPreview key = {i} {...collection}/>)
                 }

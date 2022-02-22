@@ -1,7 +1,12 @@
 import { CartActionTypes } from "./cart.types"
-const CartAction = () => {
+export const cartAction = () => {
     return {
         type: CartActionTypes.TOGGLE_CART_VIEW
     }
 }
-export default CartAction;
+export const addItemToCart = (item) =>{
+    return {
+        type: CartActionTypes.ADD_ITEM,
+        payload: item
+    }
+}
