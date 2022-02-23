@@ -6,6 +6,8 @@ import './header.styles.scss';
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdawn from '../cart/cart-dropdawn.component';
+import { selectCartHiden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 
 const Header = ({ currentUser, dropdawnIsHidden }) => {
@@ -23,15 +25,15 @@ const Header = ({ currentUser, dropdawnIsHidden }) => {
                 <CartIcon />
             </div>
             {
-                dropdawnIsHidden ? (<CartDropdawn />) : null
+                !dropdawnIsHidden ? (<CartDropdawn />) : null
             }
         </div>
     )
 }
-const mapStateToProps = ({ user: { currentUser }, cart: {hiden} }) => (
+const mapStateToProps = (select) => (
     {
-        currentUser: currentUser,
-        dropdawnIsHidden: hiden
+        currentUser: selectCurrentUser(select),
+        dropdawnIsHidden: selectCartHiden(select)
     }
 )
 
