@@ -4,6 +4,11 @@ export const toggleCartView = () => {
         type: CartActionTypes.TOGGLE_CART_VIEW
     }
 }
+export const closeCartView = () => {
+    return{
+        type: CartActionTypes.CLOSE_CART_VIEW
+    }
+}
 export const addItemToCart = item => {
     return {
         type: CartActionTypes.ADD_ITEM,
